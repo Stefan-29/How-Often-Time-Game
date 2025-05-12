@@ -1,0 +1,172 @@
+{
+    "writingActivities": [
+        {
+            "id": "writing-1",
+            "question": "How often do you read books?",
+            "image": "assets/book.jpg",
+            "hint": "Think about how many times in a week or month you read books.",
+            "expectedKeywords": ["always", "usually", "sometimes", "never", "rarely", "often", "every day", "once a week", "twice a month"],
+            "sentenceStarters": ["I __ read books __.", "My teacher says I __ read."],
+            "difficulty": 1
+        },
+        {
+            "id": "writing-2",
+            "question": "How often does your family eat dinner together?",
+            "image": "assets/family_dinner.jpg",
+            "hint": "Think about your family dinners. Do you eat together every day or only on special occasions?",
+            "expectedKeywords": ["always", "usually", "sometimes", "never", "rarely", "often", "every day", "on weekends"],
+            "sentenceStarters": ["We __ eat together __.", "My mom __ cooks dinner __."],
+            "difficulty": 2
+        },
+        {
+            "id": "writing-3",
+            "question": "How often do you play sports?",
+            "image": "assets/sports.jpg",
+            "hint": "Do you play sports regularly or only occasionally?",
+            "expectedKeywords": ["always", "usually", "sometimes", "never", "rarely", "often", "every day", "once a week", "twice a week", "on weekends"],
+            "sentenceStarters": ["I __ play __.", "My friends __ play __."],
+            "difficulty": 1
+        },
+        {
+            "id": "writing-4",
+            "question": "How often do you brush your teeth?",
+            "image": "assets/brushing_teeth.jpg",
+            "hint": "Think about your morning and night routine.",
+            "expectedKeywords": ["always", "usually", "twice a day", "every morning", "every night"],
+            "sentenceStarters": ["I __ brush my teeth __.", "The dentist says we should __ brush __."],
+            "difficulty": 1
+        },
+        {
+            "id": "writing-5",
+            "question": "How often do you visit your grandparents?",
+            "image": "assets/grandparents.jpg",
+            "hint": "Think about special visits or regular meetings.",
+            "expectedKeywords": ["every weekend", "once a month", "twice a year", "often", "rarely"],
+            "sentenceStarters": ["We __ visit __.", "I __ see my grandparents __."],
+            "difficulty": 2
+        }
+    ],
+    "gameActivities": [
+        {
+            "id": "game-1",
+            "type": "drag-drop",
+            "question": "Complete the sentence:",
+            "sentence": "I ____ brush my teeth ____ before going to bed.",
+            "options": ["always", "never", "every night", "sometimes", "rarely"],
+            "correctAnswer": ["always", "every night"],
+            "audio": "brush_teeth.mp3",
+            "difficulty": 1
+        },
+        {
+            "id": "game-2",
+            "type": "drag-drop",
+            "question": "Complete the sentence:",
+            "sentence": "My brother ____ plays video games ____, but he ____ reads books.",
+            "options": ["often", "every day", "never", "sometimes", "rarely", "usually"],
+            "correctAnswer": ["often", "every day", "rarely"],
+            "audio": "video_games.mp3",
+            "difficulty": 2
+        },
+        {
+            "id": "game-3",
+            "type": "matching",
+            "question": "Match the frequency words with their meanings:",
+            "pairs": [
+                ["always", "100% of the time"],
+                ["usually", "about 80% of the time"],
+                ["sometimes", "about 50% of the time"],
+                ["rarely", "about 20% of the time"],
+                ["never", "0% of the time"]
+            ],
+            "difficulty": 1
+        },
+        {
+            "id": "game-4",
+            "type": "ordering",
+            "question": "Put these frequency words in order from most often to least often:",
+            "items": ["never", "always", "sometimes", "usually", "rarely"],
+            "correctOrder": ["always", "usually", "sometimes", "rarely", "never"],
+            "difficulty": 2
+        }
+    ],
+    "spellingActivities": [
+        {
+            "id": "spelling-1",
+            "word": "always",
+            "hint": "This word means \"every time\" or \"at all times\".",
+            "clue": "a_w_y_",
+            "audio": "always.mp3",
+            "sentence": "I __ wake up at 7:00 AM.",
+            "difficulty": 1
+        },
+        {
+            "id": "spelling-2",
+            "word": "sometimes",
+            "hint": "This word means \"occasionally\" or \"now and then\".",
+            "clue": "s_m_t_m_s",
+            "audio": "sometimes.mp3",
+            "sentence": "We __ go to the park on Sundays.",
+            "difficulty": 2
+        },
+        {
+            "id": "spelling-3",
+            "word": "usually",
+            "hint": "This word means \"most of the time\" or \"commonly\".",
+            "clue": "u_u_l_y",
+            "audio": "usually.mp3",
+            "sentence": "My dad __ drives me to school.",
+            "difficulty": 2
+        },
+        {
+            "id": "spelling-4",
+            "word": "breakfast",
+            "hint": "The first meal of the day.",
+            "clue": "b_e_k_a_t",
+            "audio": "breakfast.mp3",
+            "sentence": "I eat __ every morning.",
+            "difficulty": 1
+        },
+        {
+            "id": "spelling-5",
+            "word": "exercise",
+            "hint": "Physical activity to stay healthy.",
+            "clue": "e_e_c_s_",
+            "audio": "exercise.mp3",
+            "sentence": "We should __ every day.",
+            "difficulty": 3
+        }
+    ],
+    "rewards": {
+        "stars": {
+            "bronze": 5,
+            "silver": 15,
+            "gold": 30
+        },
+        "badges": [
+            {
+                "id": "writer",
+                "name": "Writing Star",
+                "condition": "Complete all writing activities",
+                "icon": "✍️",
+                "points": 10
+            },
+            {
+                "id": "gamer",
+                "name": "Game Master",
+                "condition": "Complete all word games",
+                "icon": "🎮",
+                "points": 15
+            },
+            {
+                "id": "speller",
+                "name": "Spelling Champion",
+                "condition": "Complete all spelling challenges",
+                "icon": "🏆",
+                "points": 20
+            }
+        ]
+    }
+}
+
+
+

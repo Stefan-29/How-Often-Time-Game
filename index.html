@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Practice: How Often?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>English Adventures</h1>
+            <h2>L7: How Often?</h2>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="overall-progress"></div>
+                </div>
+                <div class="progress-text">Progress: <span id="progress-percent">0%</span></div>
+                <button id="reset-progress" class="reset-btn">Reset Progress</button>
+            </div>
+            <div class="rewards-container">
+                <div class="stars-container" id="stars-container">
+                    <!-- Stars will be added here -->
+                </div>
+                <div class="badges-container" id="badges-container">
+                    <!-- Badges will be added here -->
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="module-navigation">
+                <button class="nav-btn active" data-section="writing-module">Writing Practice</button>
+                <button class="nav-btn" data-section="game-module">Word Games</button>
+                <button class="nav-btn" data-section="spelling-module">Spelling Challenge</button>
+            </div>
+
+            <div class="modules-container">
+                <!-- Writing Module -->
+                <section id="writing-module" class="module active">
+                    <h3>Writing Practice</h3>
+                    <div class="writing-instructions">
+                        Answer questions using adverbs of frequency and time.
+                    </div>
+                    <div class="activities-container" id="writing-activities">
+                        <!-- Writing activities will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Game Module -->
+                <section id="game-module" class="module">
+                    <h3>Word Games</h3>
+                    <div class="game-instructions">
+                        Drag and drop the correct words to complete sentences.
+                    </div>
+                    <div class="activities-container" id="game-activities">
+                        <!-- Game activities will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Spelling Module -->
+                <section id="spelling-module" class="module">
+                    <h3>Spelling Challenge</h3>
+                    <div class="spelling-instructions">
+                        Practice spelling frequency adverbs correctly.
+                    </div>
+                    <div class="activities-container" id="spelling-activities">
+                        <!-- Spelling activities will be loaded here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <div class="word-bank-container">
+            <h4>Word Bank <button id="toggle-word-bank" class="toggle-btn">Show/Hide</button></h4>
+            <div class="word-bank" id="word-bank">
+                <div class="word-category">
+                    <h5>Frequency Adverbs</h5>
+                    <div class="words">
+                        <span class="word">always</span>
+                        <span class="word">usually</span>
+                        <span class="word">often</span>
+                        <span class="word">sometimes</span>
+                        <span class="word">rarely</span>
+                        <span class="word">never</span>
+                    </div>
+                </div>
+                <div class="word-category">
+                    <h5>Time Expressions</h5>
+                    <div class="words">
+                        <span class="word">every day</span>
+                        <span class="word">once a week</span>
+                        <span class="word">twice a month</span>
+                        <span class="word">on weekends</span>
+                        <span class="word">in the morning</span>
+                        <span class="word">at night</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="hint-container">
+                <button id="hint-toggle" class="hint-btn">Need a hint?</button>
+                <div id="hint-text" class="hint-text"></div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="feedback-title">Great job!</h3>
+            <p id="feedback-message"></p>
+            <div id="feedback-reward" class="feedback-reward"></div>
+            <button id="feedback-continue" class="btn">Continue</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="modules/writingModule.js"></script>
+    <script src="modules/gameModule.js"></script>
+    <script src="modules/spellingHelper.js"></script>
+    <script src="modules/rewardsSystem.js"></script>
+</body>
+</html>
