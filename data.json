@@ -2,7 +2,7 @@
     "writingActivities": [
         {
             "id": "writing-1",
-            "question": "How often do you read books?",
+            "question": "How often do you read comics?",
             "image": "assets/book.jpg",
             "hint": "Think about how many times in a week or month you read books.",
             "expectedKeywords": ["always", "usually", "sometimes", "never", "rarely", "often", "every day", "once a week", "twice a month"],
@@ -46,101 +46,180 @@
             "difficulty": 2
         }
     ],
-    "gameActivities": [
-        {
-            "id": "game-1",
-            "type": "drag-drop",
-            "question": "Complete the sentence:",
-            "sentence": "I ____ brush my teeth ____ before going to bed.",
-            "options": ["always", "never", "every night", "sometimes", "rarely"],
-            "correctAnswer": ["always", "every night"],
-            "audio": "brush_teeth.mp3",
-            "difficulty": 1
-        },
-        {
-            "id": "game-2",
-            "type": "drag-drop",
-            "question": "Complete the sentence:",
-            "sentence": "My brother ____ plays video games ____, but he ____ reads books.",
-            "options": ["often", "every day", "never", "sometimes", "rarely", "usually"],
-            "correctAnswer": ["often", "every day", "rarely"],
-            "audio": "video_games.mp3",
-            "difficulty": 2
-        },
-        {
-            "id": "game-3",
-            "type": "matching",
-            "question": "Match the frequency words with their meanings:",
-            "pairs": [
-                ["always", "100% of the time"],
-                ["usually", "about 80% of the time"],
-                ["sometimes", "about 50% of the time"],
-                ["rarely", "about 20% of the time"],
-                ["never", "0% of the time"]
-            ],
-            "difficulty": 1
-        },
-        {
-            "id": "game-4",
-            "type": "ordering",
-            "question": "Put these frequency words in order from most often to least often:",
-            "items": ["never", "always", "sometimes", "usually", "rarely"],
-            "correctOrder": ["always", "usually", "sometimes", "rarely", "never"],
-            "difficulty": 2
-        }
-    ],
+"gameActivities": [
+    {
+        "id": "game-1",
+        "type": "drag-drop",
+        "question": "Complete the sentence:",
+        "sentence": "I ____ brush my teeth ____ before going to bed.",
+        "options": ["always", "never", "every night", "sometimes", "rarely"],
+        "correctAnswer": ["always", "every night"],
+        "audio": "brush_teeth.mp3"
+    },
+    {
+        "id": "game-2",
+        "type": "drag-drop",
+        "question": "Complete the sentence:",
+        "sentence": "My brother ____ plays video games ____, but he ____ reads books.",
+        "options": ["often", "every day", "never", "sometimes", "rarely", "usually"],
+        "correctAnswer": ["often", "every day", "rarely"],
+        "audio": "video_games.mp3"
+    },
+    {
+        "id": "game-1",
+        "type": "drag-drop",
+        "question": "Complete the sentence:",
+        "sentence": "I ____ brush my teeth ____ before going to bed.",
+        "options": ["always", "never", "every night", "sometimes", "rarely"],
+        "correctAnswer": ["always", "every night"],
+        "audio": "brush_teeth.mp3"
+    },
+    {
+        "id": "game-2",
+        "type": "drag-drop",
+        "question": "Complete the sentence:",
+        "sentence": "My brother ____ plays video games ____, but he ____ reads books.",
+        "options": ["often", "every day", "never", "sometimes", "rarely", "usually"],
+        "correctAnswer": ["often", "every day", "rarely"],
+        "audio": "video_games.mp3"
+    },
+    {
+        "id": "game-3",
+        "type": "drag-drop",
+        "question": "Complete the sentence:",
+        "sentence": "We ____ eat dinner together ____ the weekends.",
+        "options": ["usually", "never", "sometimes", "on", "during"],
+        "correctAnswer": ["usually", "on"],
+        "audio": "family_dinner.mp3"
+    },
+    {
+        "id": "game-4",
+        "type": "drag-drop",
+        "question": "Complete the sentence:",
+        "sentence": "My teacher says we should ____ review our notes ____ we go to bed.",
+        "options": ["always", "before", "never", "rarely", "after"],
+        "correctAnswer": ["always", "before"],
+        "audio": "homework_tips.mp3"
+    },
+    {
+        "id": "game-5",
+        "type": "drag-drop",
+        "question": "Complete the sentence:",
+        "sentence": "I ____ visit my grandparents ____ a month.",
+        "options": ["once", "never", "a", "every", "twice"],
+        "correctAnswer": ["once", "a"],
+        "audio": "grandparents.mp3"
+    },
+    {
+        "id": "game-6",
+        "type": "drag-drop",
+        "question": "Complete the sentence:",
+        "sentence": "My friends ____ go to the park ____ school.",
+        "options": ["sometimes", "after", "never", "always", "before"],
+        "correctAnswer": ["sometimes", "after"],
+        "audio": "go_to_park.mp3"
+    },
+    {
+        "id": "game-7",
+        "type": "drag-drop",
+        "question": "Complete the sentence:",
+        "sentence": "We ____ play badminton ____ Saturday mornings.",
+        "options": ["usually", "on", "never", "always", "in"],
+        "correctAnswer": ["usually", "on"],
+        "audio": "badminton.mp3"
+    },
+    {
+        "id": "game-8",
+        "type": "drag-drop",
+        "question": "Complete the sentence:",
+        "sentence": "He ____ forgets his homework. He is ____ prepared.",
+        "options": ["never", "always", "rarely", "sometimes"],
+        "correctAnswer": ["never", "always"],
+        "audio": "homework_reminder.mp3"
+    }
+
+]
+,
     "spellingActivities": [
-        {
-            "id": "spelling-1",
-            "word": "always",
-            "hint": "This word means \"every time\" or \"at all times\".",
-            "clue": "a_w_y_",
-            "audio": "always.mp3",
-            "sentence": "I __ wake up at 7:00 AM.",
-            "difficulty": 1
-        },
-        {
-            "id": "spelling-2",
-            "word": "sometimes",
-            "hint": "This word means \"occasionally\" or \"now and then\".",
-            "clue": "s_m_t_m_s",
-            "audio": "sometimes.mp3",
-            "sentence": "We __ go to the park on Sundays.",
-            "difficulty": 2
-        },
-        {
-            "id": "spelling-3",
-            "word": "usually",
-            "hint": "This word means \"most of the time\" or \"commonly\".",
-            "clue": "u_u_l_y",
-            "audio": "usually.mp3",
-            "sentence": "My dad __ drives me to school.",
-            "difficulty": 2
-        },
-        {
-            "id": "spelling-4",
-            "word": "breakfast",
-            "hint": "The first meal of the day.",
-            "clue": "b_e_k_a_t",
-            "audio": "breakfast.mp3",
-            "sentence": "I eat __ every morning.",
-            "difficulty": 1
-        },
-        {
-            "id": "spelling-5",
-            "word": "exercise",
-            "hint": "Physical activity to stay healthy.",
-            "clue": "e_e_c_s_",
-            "audio": "exercise.mp3",
-            "sentence": "We should __ every day.",
-            "difficulty": 3
-        }
-    ],
+    {
+        "id": "spelling-1",
+        "word": "always",
+        "hint": "This word means 'every time' or 'at all times'.",
+        "clue": "a_w_y_",
+        "audio": "always.mp3",
+        "sentence": "I __ wake up at 7:00 AM."
+    },
+    {
+        "id": "spelling-2",
+        "word": "usually",
+        "hint": "This word means 'most of the time' or 'commonly'.",
+        "clue": "u_u_l_y",
+        "audio": "usually.mp3",
+        "sentence": "My dad __ drives me to school."
+    },
+    {
+        "id": "spelling-3",
+        "word": "often",
+        "hint": "This word means 'many times' or 'frequently'.",
+        "clue": "_f_e_",
+        "audio": "often.mp3",
+        "sentence": "We __ go to the library after school."
+    },
+    {
+        "id": "spelling-4",
+        "word": "sometimes",
+        "hint": "This word means 'occasionally' or 'now and then'.",
+        "clue": "s_m_t_m_s",
+        "audio": "sometimes.mp3",
+        "sentence": "We __ eat at a restaurant."
+    },
+    {
+        "id": "spelling-5",
+        "word": "rarely",
+        "hint": "This word means 'not often' or 'almost never'.",
+        "clue": "r__e_y",
+        "audio": "rarely.mp3",
+        "sentence": "He __ eats fast food."
+    },
+    {
+        "id": "spelling-6",
+        "word": "never",
+        "hint": "This word means 'not at all' or '0% of the time'.",
+        "clue": "n_v_r",
+        "audio": "never.mp3",
+        "sentence": "I __ smoke."
+    },
+    {
+        "id": "spelling-7",
+        "word": "every day",
+        "hint": "This phrase means 'daily'.",
+        "clue": "e_er_  __y",
+        "audio": "every_day.mp3",
+        "sentence": "She exercises __."
+    },
+    {
+        "id": "spelling-8",
+        "word": "once a week",
+        "hint": "This phrase means '1 time each week'.",
+        "clue": "o__e  _  w__k",
+        "audio": "once_a_week.mp3",
+        "sentence": "We have art class __."
+    },
+    {
+        "id": "spelling-9",
+        "word": "twice a month",
+        "hint": "This phrase means '2 times each month'.",
+        "clue": "t__c_ _ m__t_",
+        "audio": "twice_a_month.mp3",
+        "sentence": "They go hiking __."
+    }
+]
+,
     "rewards": {
         "stars": {
-            "bronze": 5,
-            "silver": 15,
-            "gold": 30
+            "bronze": 8,
+            "silver": 16,
+            "gold": 24
         },
         "badges": [
             {

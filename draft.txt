@@ -1,0 +1,31 @@
+    //JSON FILES DRAFT (for GameModule Purposes)
+    {
+        "id": "game-3",
+        "type": "matching",
+        "question": "Match the frequency words with their meanings:",
+        "sentence": "",
+        "options": [
+            ["always", "100% of the time"],
+            ["usually", "about 80% of the time"],
+            ["sometimes", "about 50% of the time"],
+            ["rarely", "about 20% of the time"],
+            ["never", "0% of the time"]
+        ],
+        "correctAnswer": [
+            ["always", "100% of the time"],
+            ["usually", "about 80% of the time"],
+            ["sometimes", "about 50% of the time"],
+            ["rarely", "about 20% of the time"],
+            ["never", "0% of the time"]
+        ],
+        "audio": "frequency_words.mp3"
+    },
+    {
+        "id": "game-4",
+        "type": "ordering",
+        "question": "Put these frequency words in order from most often to least often:",
+        "sentence": "",
+        "options": ["never", "always", "sometimes", "usually", "rarely"],
+        "correctAnswer": ["always", "usually", "sometimes", "rarely", "never"],
+        "audio": "frequency_order.mp3"
+    }
