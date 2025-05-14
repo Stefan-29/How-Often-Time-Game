@@ -17,18 +17,178 @@ const App = {
         }
     },
 
+ // Config data will be stored here once loaded
+    config: null,
+
     // Initialize the application
     init: function() {
-        this.loadModules();
-        this.loadState();
-        this.setupEventListeners();
-        this.updateUI();
+        this.loadConfig()
+            .then(() => {
+                this.initializePage();
+                this.loadModules();
+                this.updateUI();
+                this.loadState();
+                this.setupEventListeners();
+            })
+            .catch(error => {
+                console.error('Error during initialization:', error);
+            });
+    },
+    
+    // Load configuration data
+    loadConfig: function() {
+        return new Promise((resolve, reject) => {
+            // First try to fetch from the config.json file
+            fetch('config/config.json')
+                .then(response => response.json())
+                .then(data => {
+                    this.config = data;
+                    resolve();
+                })
+                .catch(error => {
+                    console.warn('Could not load config.json, falling back to ConfigManager:', error);
+                    // Fallback to the pre-defined config in ConfigManager
+                    this.config = ConfigManager.getDefaultConfig();
+                    resolve();
+                });
+        });
+    },
+    
+    // Initialize the page structure based on config
+    initializePage: function() {
+        if (!this.config) {
+            console.error('Config data is not loaded!');
+            return;
+        }
+        
+        // Set page title and favicon
+        document.title = this.config.siteSettings.title;
+        const favicon = document.getElementById('favicon');
+        if (favicon) {
+            favicon.href = this.config.siteSettings.favicon;
+        }
+        
+        // Set site title and lesson title
+        document.getElementById('site-title').textContent = this.config.siteSettings.title;
+        document.getElementById('lesson-title').textContent = this.config.lesson.title;
+        
+        // Create module navigation buttons
+        this.createModuleNavigation();
+        
+        // Create module sections
+        this.createModuleSections();
+        
+        // Create word bank
+        this.createWordBank();
+        
+        // Create audio elements
+        this.createAudioElements();
+    },
+    
+    // Create module navigation buttons
+    createModuleNavigation: function() {
+        const navigationContainer = document.getElementById('module-navigation');
+        navigationContainer.innerHTML = '';
+        
+        this.config.lesson.modules.forEach((module, index) => {
+            const navButton = document.createElement('button');
+            navButton.className = 'nav-btn' + (index === 0 ? ' active' : '');
+            navButton.dataset.section = module.id;
+            navButton.textContent = module.name;
+            navigationContainer.appendChild(navButton);
+        });
+    },
+    
+    // Create module sections
+    createModuleSections: function() {
+        const modulesContainer = document.getElementById('modules-container');
+        modulesContainer.innerHTML = '';
+        
+        this.config.lesson.modules.forEach((module, index) => {
+            const moduleSection = document.createElement('section');
+            moduleSection.id = module.id;
+            moduleSection.className = 'module' + (index === 0 ? ' active' : '');
+            
+            moduleSection.innerHTML = `
+                <h3>${module.title}</h3>
+                <div class="${module.id.split('-')[0]}-instructions">
+                    ${module.instructions}
+                </div>
+                <div class="activities-container" id="${module.id}-activities">
+                    <!-- Activities will be loaded here -->
+                </div>
+            `;
+            
+            modulesContainer.appendChild(moduleSection);
+        });
+    },
+    
+    // Create word bank
+    createWordBank: function() {
+        const wordBank = document.getElementById('word-bank');
+        wordBank.innerHTML = '';
+        
+        this.config.wordBank.categories.forEach(category => {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.className = 'word-category';
+            
+            const categoryTitle = document.createElement('h5');
+            categoryTitle.textContent = category.title;
+            categoryDiv.appendChild(categoryTitle);
+            
+            const wordsDiv = document.createElement('div');
+            wordsDiv.className = 'words';
+            
+            category.words.forEach(word => {
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'word';
+                wordSpan.textContent = word;
+                wordsDiv.appendChild(wordSpan);
+            });
+            
+            categoryDiv.appendChild(wordsDiv);
+            wordBank.appendChild(categoryDiv);
+        });
+    },
+    
+    // Create audio elements
+    createAudioElements: function() {
+        const audioContainer = document.getElementById('audio-container');
+        if (!audioContainer) {
+            const newAudioContainer = document.createElement('div');
+            newAudioContainer.id = 'audio-container';
+            document.body.appendChild(newAudioContainer);
+            audioContainer = newAudioContainer;
+        }
+        
+        audioContainer.innerHTML = '';
+        
+        // Background music
+        const backgroundMusic = document.createElement('audio');
+        backgroundMusic.id = 'backgroundMusic';
+        backgroundMusic.loop = true;
+        const backgroundMusicSource = document.createElement('source');
+        backgroundMusicSource.src = this.config.audio.backgroundMusic;
+        backgroundMusicSource.type = 'audio/mp3';
+        backgroundMusic.appendChild(backgroundMusicSource);
+        audioContainer.appendChild(backgroundMusic);
+        
+        // Sound effects
+        for (const [key, value] of Object.entries(this.config.audio.soundEffects)) {
+            const soundEffect = document.createElement('audio');
+            soundEffect.id = `${key}Sound`;
+            const soundEffectSource = document.createElement('source');
+            soundEffectSource.src = value;
+            soundEffectSource.type = 'audio/mp3';
+            soundEffect.appendChild(soundEffectSource);
+            audioContainer.appendChild(soundEffect);
+        }
     },
 
     // Load modules dynamically
     loadModules: function() {
         // Load content from data.json
-        fetch('data.json')
+        fetch('reproducibility/data.json')
             .then(response => response.json())
             .then(data => {
                 // Initialize each module with its data
@@ -36,6 +196,8 @@ const App = {
                 GameModule.init(data.gameActivities);
                 SpellingHelper.init(data.spellingActivities);
                 RewardSystem.init(data.rewards);
+                LessonModule.init(data.lessonActivities);
+
             })
             .catch(error => {
                 console.error('Error loading data:', error);
@@ -277,6 +439,8 @@ RewardSystem.init(sampleData.rewards);
         const feedbackReward = document.getElementById('feedback-reward');
 
         feedbackTitle.textContent = isCorrect ? 'Great job!' : 'Try again!';
+        const soundId = isCorrect ? 'correctSound' : 'wrongSound';
+        this.playSound(soundId);
         feedbackMessage.textContent = message;
         
         if (reward) {
@@ -287,10 +451,14 @@ RewardSystem.init(sampleData.rewards);
         }
 
         feedbackModal.style.display = 'flex';
+
+
     },
 
     // Update UI based on state
     updateUI: function() {
+        // Update Sound Control
+        this.initSoundControl();
         // Update progress bar
         const progressBar = document.getElementById('overall-progress');
         const progressPercent = document.getElementById('progress-percent');
@@ -317,6 +485,43 @@ RewardSystem.init(sampleData.rewards);
             badgeElement.title = badge.name;
             badgesContainer.appendChild(badgeElement);
         });
+    },
+
+    // Initialize sound control
+    initSoundControl: function() {
+    const toggleAudioBtn = document.getElementById('toggleAudio');
+    const audioIcon = document.getElementById('audioIcon');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    
+    let audioEnabled = false;
+    
+    if (toggleAudioBtn && backgroundMusic) {
+        toggleAudioBtn.addEventListener('click', function() {
+            audioEnabled = !audioEnabled;
+            
+            if (audioEnabled) {
+                backgroundMusic.volume = 0.3; // Set volume to 30%
+                backgroundMusic.play().catch(e => {
+                    console.warn('Audio playback was prevented:', e);
+                    audioEnabled = false;
+                });
+                audioIcon.className = 'fas fa-volume-up';
+            } else {
+                backgroundMusic.pause();
+                audioIcon.className = 'fas fa-volume-mute';
+            }
+        });
+    }
+    },
+    // Play sound for activities
+    playSound: function(soundId) {
+    const sound = document.getElementById(soundId);
+    if (sound) {
+        sound.currentTime = 0;
+        sound.play().catch(e => {
+            console.warn('Sound playback was prevented:', e);
+        });
+    }
     },
 
     // Update hint text

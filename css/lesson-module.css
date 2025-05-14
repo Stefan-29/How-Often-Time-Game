@@ -1,0 +1,223 @@
+.lesson-module {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #eef5ff;
+    border-radius: 6px;
+}
+
+.lesson-nav-btn {
+    background-color: #4a86e8;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.lesson-nav-btn:hover {
+    background-color: #3a76d8;
+}
+
+.lesson-nav-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.lesson-progress {
+    font-weight: bold;
+    color: #555;
+}
+
+.lesson-content {
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-title {
+    color: #4a86e8;
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.lesson-main-content {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.lesson-main-content p {
+    margin-bottom: 15px;
+}
+
+.audio-control {
+    margin: 15px 0;
+}
+
+.play-audio {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.play-audio:hover {
+    background-color: #4cae4c;
+}
+
+.examples-section {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.examples-section h4 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.examples-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.examples-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.check-understanding {
+    margin-top: 25px;
+    text-align: center;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-radius: 6px;
+}
+
+.check-understanding h4 {
+    margin-bottom: 15px;
+    color: #4a86e8;
+}
+
+.check-btn {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.check-btn:hover {
+    background-color: #e08e0b;
+}
+
+/* Frequency chart styles */
+.frequency-chart {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.frequency-chart div {
+    border-radius: 4px;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.bar-100 {
+    background-color: #2ecc71;
+    width: 100%;
+}
+
+.bar-90 {
+    background-color: #3498db;
+    width: 90%;
+}
+
+.bar-70 {
+    background-color: #9b59b6;
+    width: 70%;
+}
+
+.bar-50 {
+    background-color: #f1c40f;
+    width: 50%;
+    color: #444 !important;
+}
+
+.bar-30 {
+    background-color: #e67e22;
+    width: 30%;
+}
+
+.bar-10 {
+    background-color: #e74c3c;
+    width: 10%;
+}
+
+.bar-0 {
+    background-color: #95a5a6;
+    width: 100%;
+}
+
+/* Frequency table */
+.frequency-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.frequency-table th, .frequency-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.frequency-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.frequency-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.frequency-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Highlight animation for activities */
+@keyframes highlightPulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 134, 232, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(74, 134, 232, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 134, 232, 0); }
+}
+
+.highlight-activity {
+    animation: highlightPulse 2s infinite;
+    border: 2px solid #4a86e8 !important;
+}

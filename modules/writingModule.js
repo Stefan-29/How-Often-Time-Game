@@ -10,7 +10,7 @@ const WritingModule = {
     
     // Render writing activities
     renderActivities: function() {
-        const container = document.getElementById('writing-activities');
+        const container = document.getElementById('writing-module-activities');
         container.innerHTML = ''; // Clear existing content
         
         this.activities.forEach((activity, index) => {

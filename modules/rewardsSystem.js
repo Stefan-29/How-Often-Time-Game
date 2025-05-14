@@ -151,7 +151,7 @@ const RewardSystem = {
             
             // Play achievement sound if available
             if (App.sounds && App.sounds.achievement) {
-                App.sounds.achievement.play();
+                App.playSound('cheeringSound');
             }
         },
         

@@ -1,0 +1,55 @@
+{
+  "siteSettings": {
+    "title": "English Adventures",
+    "favicon": "favicon.ico"
+  },
+  "lesson": {
+    "title": "How Often?",
+    "modules": [
+      {
+        "id": "lesson-module",
+        "name": "Learn",
+        "title": "How Often?",
+        "instructions": "Learn about adverbs of frequency and how to use them correctly."
+      },
+      {
+        "id": "writing-module",
+        "name": "Write",
+        "title": "Writing Practice",
+        "instructions": "Answer questions using adverbs of frequency and time."
+      },
+      {
+        "id": "game-module", 
+        "name": "Play",
+        "title": "Word Games",
+        "instructions": "Drag and drop the correct words to complete sentences."
+      },
+      {
+        "id": "spelling-module",
+        "name": "Spell",
+        "title": "Spelling Challenge",
+        "instructions": "Practice spelling frequency adverbs correctly."
+      }
+    ]
+  },
+  "wordBank": {
+    "categories": [
+      {
+        "title": "Frequency Adverbs",
+        "words": ["always", "usually", "often", "sometimes", "rarely", "never"]
+      },
+      {
+        "title": "Time Expressions",
+        "words": ["every day", "once a week", "twice a month", "on weekends", "in the morning", "at night"]
+      }
+    ]
+  },
+  "audio": {
+    "backgroundMusic": "sounds/background-music.mp3",
+    "soundEffects": {
+      "correct": "sounds/correct-answer.mp3",
+      "wrong": "sounds/wrong-answer.mp3",
+      "cheering": "sounds/cheering.mp3"
+    }
+  }
+}

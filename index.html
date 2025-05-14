@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Practice: How Often?</title>
-    <link rel="stylesheet" href="styles.css">
+    <title id="page-title">Loading...</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/lesson-module.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="" id="favicon">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>English Adventures</h1>
-            <h2>L7: How Often?</h2>
+            <h1 id="site-title">Loading...</h1>
+            <h2 id="lesson-title">Loading...</h2>
             <div class="progress-container">
                 <div class="progress-bar">
                     <div class="progress" id="overall-progress"></div>
@@ -29,73 +32,18 @@
         </header>
 
         <main>
-            <div class="module-navigation">
-                <button class="nav-btn active" data-section="writing-module">Writing Practice</button>
-                <button class="nav-btn" data-section="game-module">Word Games</button>
-                <button class="nav-btn" data-section="spelling-module">Spelling Challenge</button>
+            <div class="module-navigation" id="module-navigation">
+                <!-- Module navigation buttons will be inserted here dynamically -->
             </div>
-
-            <div class="modules-container">
-                <!-- Writing Module -->
-                <section id="writing-module" class="module active">
-                    <h3>Writing Practice</h3>
-                    <div class="writing-instructions">
-                        Answer questions using adverbs of frequency and time.
-                    </div>
-                    <div class="activities-container" id="writing-activities">
-                        <!-- Writing activities will be loaded here -->
-                    </div>
-                </section>
-
-                <!-- Game Module -->
-                <section id="game-module" class="module">
-                    <h3>Word Games</h3>
-                    <div class="game-instructions">
-                        Drag and drop the correct words to complete sentences.
-                    </div>
-                    <div class="activities-container" id="game-activities">
-                        <!-- Game activities will be loaded here -->
-                    </div>
-                </section>
-
-                <!-- Spelling Module -->
-                <section id="spelling-module" class="module">
-                    <h3>Spelling Challenge</h3>
-                    <div class="spelling-instructions">
-                        Practice spelling frequency adverbs correctly.
-                    </div>
-                    <div class="activities-container" id="spelling-activities">
-                        <!-- Spelling activities will be loaded here -->
-                    </div>
-                </section>
+            <div class="modules-container" id="modules-container">
+                <!-- Modules will be inserted here dynamically -->
             </div>
         </main>
 
         <div class="word-bank-container">
             <h4>Word Bank <button id="toggle-word-bank" class="toggle-btn">Show/Hide</button></h4>
             <div class="word-bank" id="word-bank">
-                <div class="word-category">
-                    <h5>Frequency Adverbs</h5>
-                    <div class="words">
-                        <span class="word">always</span>
-                        <span class="word">usually</span>
-                        <span class="word">often</span>
-                        <span class="word">sometimes</span>
-                        <span class="word">rarely</span>
-                        <span class="word">never</span>
-                    </div>
-                </div>
-                <div class="word-category">
-                    <h5>Time Expressions</h5>
-                    <div class="words">
-                        <span class="word">every day</span>
-                        <span class="word">once a week</span>
-                        <span class="word">twice a month</span>
-                        <span class="word">on weekends</span>
-                        <span class="word">in the morning</span>
-                        <span class="word">at night</span>
-                    </div>
-                </div>
+                <!-- Word bank categories and words will be inserted here dynamically -->
             </div>
         </div>
 
@@ -117,7 +65,20 @@
         </div>
     </div>
 
+    <!-- Audio Controls -->
+    <div class="audio-controls">
+        <button id="toggleAudio" class="audio-btn">
+            <i class="fas fa-volume-up" id="audioIcon"></i>
+        </button>
+    </div>
+
+    <!-- Audio elements will be dynamically created -->
+    <div id="audio-container">
+        <!-- Audio elements will be inserted here dynamically -->
+    </div>
+
     <script src="app.js"></script>
+    <script src="modules/lessonModule.js"></script>
     <script src="modules/writingModule.js"></script>
     <script src="modules/gameModule.js"></script>
     <script src="modules/spellingHelper.js"></script>

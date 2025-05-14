@@ -8,9 +8,10 @@ const GameModule = {
         this.renderActivities();
     },
     
+    
     // Render game activities
     renderActivities: function() {
-        const container = document.getElementById('game-activities');
+        const container = document.getElementById('game-module-activities');
         container.innerHTML = ''; // Clear existing content
         
         this.activities.forEach((activity, index) => {

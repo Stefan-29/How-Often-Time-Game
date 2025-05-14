@@ -10,7 +10,7 @@ const SpellingHelper = {
     
     // Render spelling activities
     renderActivities: function() {
-        const container = document.getElementById('spelling-activities');
+        const container = document.getElementById('spelling-module-activities');
         container.innerHTML = ''; // Clear existing content
         
         this.activities.forEach((activity, index) => {
